@@ -1,2 +1,4 @@
 # Jackies_replication_of_David_Cards_Mariel_boatlift_1990_study
  Reproducible replication of Card (1990), “The Impact of the Mariel Boatlift on the Miami Labor Market,” using difference-in-differences and synthetic control on CPS microdata, with a modern, version-controlled workflow.
+
+This repository replicates and extends David Card’s 1990 study of the 1980 Mariel boatlift, which brought roughly 125,000 Cuban immigrants to Miami within months. Following Card, we estimate the effect on wages and unemployment using a difference-in-differences design that compares Miami to a set of comparison cities. We then extend the analysis with modern methods, including synthetic control and event-study specifications, and test robustness to the sample and skill-group choices raised in the later literature (Borjas 2017; Peri and Yasenov 2019). All code is scripted e
