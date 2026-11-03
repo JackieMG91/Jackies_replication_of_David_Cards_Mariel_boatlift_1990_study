@@ -40,6 +40,8 @@ He looked at wages and unemployment for several groups of workers, including Bla
 
 The study has been highly influential in the debate over the economic effects of immigration, and it has been revisited several times since (for example, Borjas 2017 and Peri and Yasenov 2019).
 
+On a personal note, doing this project has really helped me learn about what I want to do in my life and I can't believe how much I've enjoyed the process of creating this project. I hope to continue doing projects like this and to keep learning about economics, and data science.
+
 ## Data
 
 *To be added: description of the CPS extract, sample restrictions, and variable definitions.*
