@@ -32,20 +32,27 @@ The baseline specification compares the change in outcomes in Miami before versu
 ```
 .
 ├── README.md
+├── _quarto.yml
+├── index.qmd
+├── _shared/              # pieces included in the article and slides
 ├── data/
-│   ├── raw/             # Not tracked. Downloaded IPUMS extract goes here.
-│   └── processed/       # Cleaned analysis files (generated)
+│   ├── raw/              # IPUMS extract (gitignored)
+│   └── processed/        # cleaned files (generated)
 ├── code/
-│   ├── 01_clean.py      # Build analysis sample from raw CPS extract
-│   ├── 02_replicate.py  # Card (1990) difference-in-differences tables
-│   ├── 03_eventstudy.py # Event-study estimates and plots
-│   ├── 04_synth.py      # Synthetic control
-│   └── 05_robustness.py # Alternative samples, skill groups, comparison cities
-├── output/
+│   ├── config.py         # paths, years, city codes, random seed
+│   ├── helpers.py        # reusable functions (cleaning, DiD, plots)
+│   ├── 01_clean.py
+│   ├── 02_replicate.py
+│   ├── 03_eventstudy.py
+│   ├── 04_synth.py
+│   └── 05_robustness.py
+├── notebooks/            # scratch exploration only
+├── results/
 │   ├── tables/
 │   └── figures/
-├── environment.yml      # Pinned environment
-└── Makefile             # One-command rebuild
+├── outputs/              # Quarto's rendered site (gitignored)
+├── environment.yml
+└── run_all.py
 ```
 
 The code is organized as a numbered pipeline. Each script reads only from `data/` and writes only to `data/processed/` or `output/`.
