@@ -29,7 +29,26 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-</style>
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="index_files/libs/clipboard/clipboard.min.js"></script>
@@ -57,12 +76,12 @@ ul.task-list li input[type="checkbox"] {
    
   <ul>
   <li><a href="#abstract" id="toc-abstract" class="nav-link active" data-scroll-target="#abstract">Abstract</a></li>
-  <li><a href="#about-this-project" id="toc-about-this-project" class="nav-link" data-scroll-target="#about-this-project">About This Project</a></li>
-  <li><a href="#introduction" id="toc-introduction" class="nav-link" data-scroll-target="#introduction">Introduction</a></li>
-  <li><a href="#data" id="toc-data" class="nav-link" data-scroll-target="#data">Data</a></li>
-  <li><a href="#method" id="toc-method" class="nav-link" data-scroll-target="#method">Method</a></li>
-  <li><a href="#results" id="toc-results" class="nav-link" data-scroll-target="#results">Results</a></li>
-  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">References</a></li>
+  <li><a href="#about-this-project" id="toc-about-this-project" class="nav-link" data-scroll-target="#about-this-project"><span class="header-section-number">1</span> About This Project</a></li>
+  <li><a href="#introduction" id="toc-introduction" class="nav-link" data-scroll-target="#introduction"><span class="header-section-number">2</span> Introduction</a></li>
+  <li><a href="#data" id="toc-data" class="nav-link" data-scroll-target="#data"><span class="header-section-number">3</span> Data</a></li>
+  <li><a href="#method" id="toc-method" class="nav-link" data-scroll-target="#method"><span class="header-section-number">4</span> Method</a></li>
+  <li><a href="#results" id="toc-results" class="nav-link" data-scroll-target="#results"><span class="header-section-number">5</span> Results</a></li>
+  <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references"><span class="header-section-number">6</span> References</a></li>
   </ul>
 <div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="index.pdf"><i class="bi bi-file-pdf"></i>PDF</a></li></ul></div></nav>
 </div>
@@ -106,47 +125,54 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="abstract" class="level2">
-<h2 class="anchored" data-anchor-id="abstract">Abstract</h2>
-<p>This project recreates David Card’s 1990 study of the Mariel Boatlift and its impact on the Miami labor market. The original study asked how a sudden influx of Cuban immigrants affected wages and unemployment in Miami. Card compared Miami with a set of other cities before and after 1980 using a difference-in-differences design. This recreation applies the same design to Current Population Survey (CPS) data, shows the math behind the estimates, and reports the results.</p>
+<section id="abstract" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="abstract">Abstract</h2>
+<p>In 1980, the Mariel Boatlift raised Miami’s labor force by roughly 7% within months, offering a rare natural experiment on how immigration affects local labor markets. This project replicates David Card’s <span class="citation" data-cites="card1990">(<a href="#ref-card1990" role="doc-biblioref">1990</a>)</span> analysis, using Current Population Survey data and a difference-in-differences design that compares changes in wages and unemployment in Miami with changes in a set of comparison cities before and after 1980. <em>[Findings to be added once the analysis is complete.]</em></p>
 </section>
-<section id="about-this-project" class="level2">
-<h2 class="anchored" data-anchor-id="about-this-project">About This Project</h2>
-<p>I’m doing this project as my entry into both economics and data science. It’s my first project of this kind, and it’s a way to teach myself the tools and math that practitioners in both fields use.</p>
+<section id="about-this-project" class="level2" data-number="1">
+<h2 data-number="1" class="anchored" data-anchor-id="about-this-project"><span class="header-section-number">1</span> About This Project</h2>
+<p>This is a learning project, not a research paper. I’m not trying to prove or disprove any theory or make claims about immigration’s effects on local labor markets. My goal is to learn about the Mariel Boatlift and its effect on Miami, about Card’s study and its influence on labor economics, and about the statistical methods behind both.</p>
+<p>I come to this topic with my own views and an eagerness to learn. To keep those from shaping the results, I follow Card’s design as closely as I can, document my assumptions, and clearly separate findings from prior studies from my own estimates.</p>
+<p><strong>Tools:</strong></p>
 <ul>
-<li><strong>Language and libraries:</strong> Python, with pandas, numpy, and matplotlib for the analysis.</li>
-<li><strong>Reporting:</strong> Quarto, to produce HTML, PDF, and slide versions of the write-up from the same source.</li>
-<li><strong>Notebooks:</strong> Jupyter notebooks, later on, to show the code alongside the results.</li>
+<li><strong>Language and libraries:</strong> Python, with pandas, numpy, and matplotlib.</li>
+<li><strong>Reporting:</strong> Quarto, producing HTML and PDF from one source.</li>
+<li><strong>Notebooks:</strong> Jupyter, later on, to show code alongside results.</li>
 </ul>
-<p>I hope to learn more about the Mariel Boatlift and its effect on Miami, about Card’s study and its influence on labor economics, and about the statistical methods behind both.</p>
 </section>
-<section id="introduction" class="level2">
-<h2 class="anchored" data-anchor-id="introduction">Introduction</h2>
+<section id="introduction" class="level2" data-number="2">
+<h2 data-number="2" class="anchored" data-anchor-id="introduction"><span class="header-section-number">2</span> Introduction</h2>
+<p>Policy makers and economists have long debated the effects of immigration on local labor markets. A common concern is that an influx of immigrants will increase the labor supply, leading to lower wages and higher unemployment for native workers, particularly those in less skilled service industry jobs. This topic has been studied extensively, but the results are often mixed and context-dependent. My goal in this paper isn’t real to look at how economists methodology and data analysis can be applied to a real-world question, and to learn more about the Mariel Boatlift and its effect on Miami.</p>
 <p>In 1980, the Mariel Boatlift brought roughly 125,000 Cuban immigrants to Miami within a few months, raising the city’s labor force by about 7%. This led to concerns that local workers, especially those with less education, would see lower wages and higher unemployment.</p>
 <p>Card treated the boatlift as a natural experiment. He compared Miami with a set of other cities that did not experience a similar influx (Atlanta, Houston, Los Angeles, and Tampa-St.&nbsp;Petersburg), using CPS data from 1979 to 1985. This let him compare how outcomes changed in Miami before and after the boatlift against how they changed in the comparison cities over the same period.</p>
 <p>He looked at wages and unemployment for several groups of workers, including Black workers, white workers, and Hispanic workers. His findings suggested that the boatlift had little measurable effect on the wages or unemployment of existing workers in Miami, which challenged the conventional view that large immigration inflows necessarily hurt local labor markets.</p>
-<p>The study has been highly influential in the debate over the economic effects of immigration, and it has been revisited several times since (for example, Borjas 2017 and Peri and Yasenov 2019).</p>
-<p>On a personal note, doing this project has really helped me learn about what I want to do in my life and I can’t believe how much I’ve enjoyed the process of creating this project. I hope to continue doing projects like this and to keep learning about economics, and data science.</p>
+<p>The study has been highly influential in the debate over the economic effects of immigration, and it has been revisited several times since (for example, <span class="citation" data-cites="borjas2017">Borjas (<a href="#ref-borjas2017" role="doc-biblioref">2017</a>)</span> and <span class="citation" data-cites="peri2019">Peri and Yasenov (<a href="#ref-peri2019" role="doc-biblioref">2019</a>)</span>).</p>
 </section>
-<section id="data" class="level2">
-<h2 class="anchored" data-anchor-id="data">Data</h2>
+<section id="data" class="level2" data-number="3">
+<h2 data-number="3" class="anchored" data-anchor-id="data"><span class="header-section-number">3</span> Data</h2>
 <p><em>To be added: description of the CPS extract, sample restrictions, and variable definitions.</em></p>
 </section>
-<section id="method" class="level2">
-<h2 class="anchored" data-anchor-id="method">Method</h2>
+<section id="method" class="level2" data-number="4">
+<h2 data-number="4" class="anchored" data-anchor-id="method"><span class="header-section-number">4</span> Method</h2>
 <p><em>To be added: the difference-in-differences model and the math behind it.</em></p>
 </section>
-<section id="results" class="level2">
-<h2 class="anchored" data-anchor-id="results">Results</h2>
+<section id="results" class="level2" data-number="5">
+<h2 data-number="5" class="anchored" data-anchor-id="results"><span class="header-section-number">5</span> Results</h2>
 <p><em>To be added.</em></p>
 </section>
-<section id="references" class="level2">
-<h2 class="anchored" data-anchor-id="references">References</h2>
-<ul>
-<li>Card, D. (1990). The Impact of the Mariel Boatlift on the Miami Labor Market. <em>Industrial and Labor Relations Review</em>, 43(2), 245-257.</li>
-<li>Borjas, G. J. (2017). The Wage Impact of the Marielitos: A Reappraisal. <em>Industrial and Labor Relations Review</em>, 70(5), 1077-1110.</li>
-<li>Peri, G., and Yasenov, V. (2019). The Labor Market Effects of a Refugee Wave: Synthetic Control Method Meets the Mariel Boatlift. <em>Journal of Human Resources</em>, 54(2), 267-309.</li>
-</ul>
+<section id="references" class="level2" data-number="6">
+<h2 data-number="6" class="anchored" data-anchor-id="references"><span class="header-section-number">6</span> References</h2>
+<div id="refs" class="references csl-bib-body hanging-indent" role="list">
+<div id="ref-borjas2017" class="csl-entry" role="listitem">
+Borjas, George J. 2017. <span>“The Wage Impact of the Marielitos: A Reappraisal.”</span> <em>Industrial and Labor Relations Review</em> 70 (5): 1077–110.
+</div>
+<div id="ref-card1990" class="csl-entry" role="listitem">
+Card, David. 1990. <span>“The Impact of the Mariel Boatlift on the Miami Labor Market.”</span> <em>Industrial and Labor Relations Review</em> 43 (2): 245–57.
+</div>
+<div id="ref-peri2019" class="csl-entry" role="listitem">
+Peri, Giovanni, and Vasil Yasenov. 2019. <span>“The Labor Market Effects of a Refugee Wave: Synthetic Control Method Meets the Mariel Boatlift.”</span> <em>Journal of Human Resources</em> 54 (2): 267–309.
+</div>
+</div>
 </section>
 
 </main>

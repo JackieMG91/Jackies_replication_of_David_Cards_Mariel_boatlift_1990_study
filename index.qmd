@@ -4,41 +4,44 @@ subtitle: "1990 Study on the Mariel Boatlift and the Miami Labor Market"
 author: "Jacqueline McGough"
 date: "2026-11-03"
 keywords: [Mariel Boatlift, Miami Labor Market, Immigration, Labor Economics, David Card]
+bibliography: references.bib
 format:
   html:
     theme: cosmo
     toc: true
     code-fold: true
+    number-sections: true
   pdf:
+    number-sections: true
     documentclass: article
     toc: true
-    margin-left: 0.5in
-    margin-right: 0.5in
-    margin-top: 0.5in
-    margin-bottom: 0.5in
-  # revealjs:
-  #   theme: simple
-  #   slide-number: true
-  #   transition: fade
+    margin-left: 1in
+    margin-right: 1in
+    margin-top: 1in
+    margin-bottom: 1in
 execute:
   freeze: auto
 ---
 
-## Abstract
+## Abstract {.unnumbered}
 
-This project recreates David Card's 1990 study of the Mariel Boatlift and its impact on the Miami labor market. The original study asked how a sudden influx of Cuban immigrants affected wages and unemployment in Miami. Card compared Miami with a set of other cities before and after 1980 using a difference-in-differences design. This recreation applies the same design to Current Population Survey (CPS) data, shows the math behind the estimates, and reports the results.
+In 1980, the Mariel Boatlift raised Miami's labor force by roughly 7% within months, offering a rare natural experiment on how immigration affects local labor markets. This project replicates David Card's [-@card1990] analysis, using Current Population Survey data and a difference-in-differences design that compares changes in wages and unemployment in Miami with changes in a set of comparison cities before and after 1980. *[Findings to be added once the analysis is complete.]*
 
 ## About This Project
 
-I'm doing this project as my entry into both economics and data science. It's my first project of this kind, and it's a way to teach myself the tools and math that practitioners in both fields use.
+This is a learning project, not a research paper. I'm not trying to prove or disprove any theory or make claims about immigration's effects on local labor markets. My goal is to learn about the Mariel Boatlift and its effect on Miami, about Card's study and its influence on labor economics, and about the statistical methods behind both.
 
-- **Language and libraries:** Python, with pandas, numpy, and matplotlib for the analysis.
-- **Reporting:** Quarto, to produce HTML, PDF, and slide versions of the write-up from the same source.
-- **Notebooks:** Jupyter notebooks, later on, to show the code alongside the results.
+I come to this topic with my own views and an eagerness to learn. To keep those from shaping the results, I follow Card's design as closely as I can, document my assumptions, and clearly separate findings from prior studies from my own estimates.
 
-I hope to learn more about the Mariel Boatlift and its effect on Miami, about Card's study and its influence on labor economics, and about the statistical methods behind both.
+**Tools:**
+
+- **Language and libraries:** Python, with pandas, numpy, and matplotlib.
+- **Reporting:** Quarto, producing HTML and PDF from one source.
+- **Notebooks:** Jupyter, later on, to show code alongside results.
 
 ## Introduction
+
+Policy makers and economists have long debated the effects of immigration on local labor markets. A common concern is that an influx of immigrants will increase the labor supply, leading to lower wages and higher unemployment for native workers, particularly those in less skilled service industry jobs. This topic has been studied extensively, but the results are often mixed and context-dependent. My goal in this paper isn't real to look at how economists methodology and data analysis can be applied to a real-world question, and to learn more about the Mariel Boatlift and its effect on Miami.
 
 In 1980, the Mariel Boatlift brought roughly 125,000 Cuban immigrants to Miami within a few months, raising the city's labor force by about 7%. This led to concerns that local workers, especially those with less education, would see lower wages and higher unemployment.
 
@@ -46,9 +49,7 @@ Card treated the boatlift as a natural experiment. He compared Miami with a set 
 
 He looked at wages and unemployment for several groups of workers, including Black workers, white workers, and Hispanic workers. His findings suggested that the boatlift had little measurable effect on the wages or unemployment of existing workers in Miami, which challenged the conventional view that large immigration inflows necessarily hurt local labor markets.
 
-The study has been highly influential in the debate over the economic effects of immigration, and it has been revisited several times since (for example, Borjas 2017 and Peri and Yasenov 2019).
-
-On a personal note, doing this project has really helped me learn about what I want to do in my life and I can't believe how much I've enjoyed the process of creating this project. I hope to continue doing projects like this and to keep learning about economics, and data science.
+The study has been highly influential in the debate over the economic effects of immigration, and it has been revisited several times since (for example, @borjas2017 and @peri2019).
 
 ## Data
 
@@ -64,6 +65,5 @@ On a personal note, doing this project has really helped me learn about what I w
 
 ## References
 
-- Card, D. (1990). The Impact of the Mariel Boatlift on the Miami Labor Market. *Industrial and Labor Relations Review*, 43(2), 245-257.
-- Borjas, G. J. (2017). The Wage Impact of the Marielitos: A Reappraisal. *Industrial and Labor Relations Review*, 70(5), 1077-1110.
-- Peri, G., and Yasenov, V. (2019). The Labor Market Effects of a Refugee Wave: Synthetic Control Method Meets the Mariel Boatlift. *Journal of Human Resources*, 54(2), 267-309.
+::: {#refs}
+:::
